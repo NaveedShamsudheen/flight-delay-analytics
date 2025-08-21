@@ -28,7 +28,9 @@ jobs:
         run: flake8 .
 
       - name: Run tests
-        run: pytest -q
+        run: |
+          export PYTHONPATH=.
+          pytest -q
 
       - name: Generate Monthly Report
         run: python generate_report.py
